@@ -1,0 +1,654 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{stackengine}
+\stackMath
+\usepackage{amssymb}
+\usepackage{multirow}
+
+
+\begin{document}
+	\setcounter{chapter}{3}
+	\chapter{Multiple Random Variables}
+	
+\section{}
+(a) $X^2 + Y^2 < 1$
+\newline
+-$\sqrt{1 - Y^2} < X < \sqrt{1 - Y^2}$
+\newline
+P($X^2 + Y^2 < 1$) = $\frac{1}{4} \int_{-1}^{1} \int_{-\sqrt{1 - Y^2}}^{\sqrt{1 - Y^2}}dxdy = \frac{\pi}{4}$
+\newline
+(b) $\int_{-1}^{1} \int_{Y/2}^{1}dxdy = \frac{1}{2}$
+\newline
+(c) P(|X + Y| < 2) = 1
+\newline
+
+\section{}
+(a) $E(ag_1(X, Y) + bg_2(X, Y) + c) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}(ag_1(X, Y) + bg_2(X, Y) + c)f_{X,Y}dxdy$ \newline
+$ = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}ag_1(X, Y)f_{X, Y}dxdy + \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}bg_2(X, Y)f_{X, Y}dxdy + \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}cg_1(X, Y)f_{X, Y}dxdy$ \newline
+$= aEg_1(X, Y) + bEg_2(X, Y) + c$
+\newline
+(b) $\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}g_1(x, y)f_{X, Y}(x, y)dxdy. \text{We know $f_{X, Y}$ $\ge$ 0 and $g_1(x, y)$ $\ge$ 0}$
+\newline
+It's enough to prove E($g_1(X, Y)$) $\ge$ 0
+\newline
+(c) $g_1(x, y) > g_2(x, y)$
+\newline
+$f_{X, Y}(x, y)g_1(x, y) > f_{X, Y}(x, y)g_2(x, y)$
+\newline
+$\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{X, Y}(x, y)g_1(x, y)dxdy > \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{X, Y}(x, y)g_2(x, y)$
+\newline
+(d) same as above
+\newline
+
+\section{}
+$\sum_{X}\sum_{Y}f_{X, Y}(0, 0) = f(0, 0) + f(0, 1) + f(1, 0) + f(1, 1) = 1$
+\newline
+\section{}
+(a) $\int_{0}^{1}\int_{0}^{2}C(x + 2y)dxdy = 1$
+\newline
+C = $\frac{1}{4}$
+\newline
+(b) \[
+	f_X(x) = \left\{\begin{array}{lr}
+	C(x + 2y) \text{ \quad if 0 < x < 2} \\
+	\text{0 \quad \quad \quad \quad \quad otherwise}
+\end{array}\right\} = xy
+\]
+\newline
+(c) $f_{X, Y}(x, y) = \int_{-\infty}^{y}\int_{-\infty}^{y}\frac{1}{4}(x+2y)dxdy = \frac{x^2y}{8} + \frac{xy^2}{4}$
+\[
+f_X(x) = \left\{\begin{array}{lr}
+	0 \quad \quad \quad \quad \quad \quad x \ge 0, y \ge 0 \\
+	\frac{x^2y}{8} + \frac{xy^2}{4} \quad 0 < x < 2, 0 < y < 1 \\
+	\frac{x^2}{8} + \frac{x}{4} \quad \quad \quad 0 < x < 2,  y \le 1 \\
+	\frac{y}{2} + \frac{y^2}{2} \quad \quad \quad x \le 2, 0 < y < 1 \\
+	1 \quad \quad \quad \quad \quad \quad x \le 2, y \le 1
+	
+\end{array}\right\}
+\]
+\newline
+(d) $f_z(z) = \frac{9}{8z^2}, 1 < z < 9$
+\newline
+
+\section{}
+(a) $\frac{7}{20}$
+\newline
+(b) $\frac{1}{6}$
+\newline
+
+\section{}
+Lets create a generic answer
+let x be the waiting time
+$\int_{2}^{1 + x}\int_{x_b - x}^{1}dx_adx_b$
+\newline
+$\int_{2}^{1 + x}(x_b - x - 1)dx_b = \frac{x^2}{2} - x + \frac{1}{2}$
+\newline
+
+\section{}
+Let X $\sim$ uniform(0, 30) and Y $\sim$ uniform(0, 60)
+\newline
+$\int_{40}^{50}\int_{0}^{60 - y}dxdy * \frac{1}{300} = .5$
+\newline
+
+\section{}
+(a) P(X = M $\vert$ M = m) = $\frac{1}{2}$ \newline P(X = 2M $\vert$ M = m) = $\frac{1}{2}$ Logically
+P(X = x) = $\pi(x) + \pi(x/2)$
+\newline
+P(M = x) = $\pi(x)$
+P(M = x$\vert$M = x) = $\frac{\pi(x)}{\pi(x) + \pi(x/2)}$
+\newline
+P(M = x$\vert$M = x) = $\frac{\pi(x/2)}{\pi(x) + \pi(x/2)}$
+\newline
+(b) $\frac{\pi(x)}{\pi(x) + \pi(x/2)}$2x + $\frac{\pi(x/2)}{\pi(x) + \pi(x/2)}$$\frac{x}{2}$ > x
+On solving we would get
+$\pi(x) < 2\pi(x)$
+\newline
+Substituting $\pi$ $\sim$ exponential($\lambda$)
+x < 2log2 $\lambda$
+\newline
+(c) doubtful
+
+\section{}
+(a) $F_{X, Y}(x, y) = F_X(x)F_Y(y)$
+\newline
+Differentiation with $\frac{\partial F_{X, Y}(x, y)}{\partial x} = f_X(x)F_Y(y)$ 
+\newline
+$\frac{\partial^2 F_{X, Y}(x, y)}{\partial x \partial y} = f_X(x)f_Y(y)$ 
+\newline
+$\int_{a}^{b}\int_{c}^{d}f_X(x)f_Y(x)dxdy = \int_{c}^{d}f_Y(y)\int_{a}^{b}f_X(x)dxdy = P(a \le x \le b)\int_{c}^{d}f_Y(y)dy = P(a \le x \le b)P(c \le y \le d)$
+\newline
+
+\section{}
+(a) take case of $f_Y(3)*f_X(2), f_{Y, X}(3, 2) = 0$
+\newline
+(b) calculate the marginals f{\textsubscript{X}}, f{\textsubscript{Y}}
+\newline
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+	\hline
+	Y$\downarrow$X$\rightarrow$& 1 & 2 & 3\\
+	\hline
+	2   & $\frac{1}{12}$ & $\frac{1}{6}$ &   $\frac{1}{12}$\\
+	3   &   $\frac{1}{12}$ & $\frac{1}{6}$   & $\frac{1}{12}$ \\
+	4   & $\frac{1}{12}$ & $\frac{1}{6}$ &  $\frac{1}{12}$\\
+	\hline
+\end{tabular}
+\newline
+
+\section{}
+U, V not independent set
+\newline
+
+\section{}
+we have 
+y + z > x
+\newline
+z + x > y
+\newline
+y + x > z
+\newline
+constraint on x: y + z > x > y - z
+\newline
+constraint on y, z > 1/2
+$\int_{0}^{l/2}\int_{0}^{l/2}\int_{y-z}^{y+z}1dxdydz = 1/4$
+\newline
+
+\section{}
+(a) $E[Y - g(X)]^2 = E[(Y - E(Y|X)) + (E(Y|X) - g(X))]^2$
+\newline
+$E[Y - E(Y|X)]^2 + E[E(Y|X) - g(X)]^2 + 2E[(Y - E(Y|X))(E(Y|X) - g(X))]$
+\newline
+($\because (E(Y|X - g(X))) is a constant with respect to Y = y$)
+\newline
+So E(Y $\vert$ X) = g(x) to minimize
+\newline
+(b) special part of case a
+\newline
+
+\section{}
+(a) $\int_{-1}^{1}\int_{-\sqrt{1 - y^2}}^{-\sqrt{1 - y^2}}e^(-x^2 + y^2)dxdy = 1 - \frac{1}{\sqrt{e}}$
+\newline
+(b) Using theorem 2.1.8 it can be proven it has a chi-square distribution
+\newline
+0.6826894921370859
+\newline
+
+\section{}
+U = X + Y 
+\newline
+V = Y
+\newline
+$f_{U, V}(u, v) = \frac{\theta^{u-v}e^{-\theta}}{(u-v)!} \frac{\lambda^ve^{-\lambda}}{v!}$
+\newline
+$f(u \vert v) = \frac{f_{U, V}(u, v)}{f(u)} = \left(\stackanchor{u}{v}\right)\left(\stackanchor{\theta}{\theta + \lambda}\right)^v\left(\stackanchor{\lambda}{\theta + \lambda}\right)^{u - v}$
+\newline
+$\because$ is other
+\newline
+
+\section{}
+(a) The support distribution (U, V) = \{u = 1, 2, 3, ..., v = 0, $\pm$1, $\pm$2, ... \}
+\newline
+If X $\ge$ Y
+U = Y, V = X - Y $\implies$ X = U + V
+$f_{U, V}(u, v) = f_{X, Y}(u+v, u) = (1 - p)^up * (1 - p)^{u + v}p$
+\newline
+If Y > X
+U = Y, V = X - Y $\implies$ X = U - V
+$f_{U, V}(u, v) = f_{X, Y}(u+v, u) = (1 - p)^up * (1 - p)^{u - v}p$
+\newline
+The function can be split independently of u, v
+\newline
+(b) z = $\frac{X}{X + Y}$
+\newline
+X = p(1 - p)\textsuperscript{x - 1} \quad Y = p(1 - p)\textsuperscript{y - 1}
+\newline
+$f_{U, V}(u, v) = p(1 - p)^{\left(\frac{uv}{1 - v} - 1\right)}p(1 - p)^{v - 1}$
+\newline
+having summation over will result to answer
+\newline
+(c) U = X, Y = V - U
+\newline
+$p^2(1 - p)^{v - 2}$
+\newline
+\section{} 
+(a) $f_X(x) = \frac{1}{e^x}$
+\newline
+(b) $\int_{i}^{i+1}e^x = e^{-i}(1 - \frac{1}{e})$
+\newline
+(c) P(X - 4 $\le$ x | Y $\ge$ 5) = P(X - 4 $\le$ x | X $\ge$ 4) = $e^{-x}$ as the exponential is memory less
+\newline
+\section{}
+dudt = rdrd$\theta$
+\newline
+and substituting would result in solving the equations
+\newline
+$\int_{0}^{\infty}\int_{0}^{\infty}f_{X, Y}(x, y)dxdy = \int_{0}^{\pi/2}\int_{0}^{\infty}\frac{2g(r)}{\pi r}rdrd\theta = 1$
+\newline
+\section{}   
+(b) $f_{X, Y}(x, y) = \frac{1}{\Gamma(\alpha_1)\Gamma(\alpha_2)}x^{\alpha_1 - 1}y^{\alpha_2 - 1}e^{-x - y}$
+\newline
+= $\frac{1}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\left[\frac{uv}{1 - u}\right]^{\alpha_1 - 1}v^{\alpha_2 - 1}e^{\left[\frac{uv}{1 - u} + v\right]}dv$
+\newline
+$f_{U}(u) = \frac{1}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\left[\frac{u}{1 - u}\right]^{\alpha_1 - 1}\int_{0}^{\infty}v^{\alpha_1 + \alpha_2 - 1}e^{\left[\frac{v}{1 - u}\right]}dv$
+\newline
+$f_{U}(u) = \frac{\Gamma(\alpha_1 + \alpha_2)}{\Gamma(\alpha_1)\Gamma(\alpha_1)}u^{\alpha_1 - 1}(1 - u)^{\alpha_2 - 1}$
+\newline
+$\because$ for others
+\newline
+(a) on solving $\frac{1}{2\pi}e^{-u}$
+\newline
+
+\section{}
+(a) This transformation is one-to-one
+\newline
+so we can split it into 3 segments
+\newline
+$A_0 = \{-\infty < x_1 < \infty, x_2 = 0\}$
+\newline
+$A_1 = \{-\infty < x_1 < \infty, x_2 > 0\}$
+\newline
+$A_2 = \{-\infty < x_1 < \infty, x_2 < 0\}$
+\newline
+$x_1 = y_2\sqrt{y_1}$
+\newline
+$x_2 = \sqrt{y_1 - y_1y_2^2}$
+\newline
+$J_1 = \left|\stackanchor{\frac{1}{2}\frac{y_2}{\sqrt{y_1}} \quad \sqrt{y_1}}{\frac{1}{2}\frac{\sqrt{1 - y_2^2}}{\sqrt{y_1}} \quad \frac{y_2\sqrt{y_1}}{\sqrt{1 - y_2^2}}}\right| = \frac{1}{2\sqrt{1 - y_2^2}}$
+\newline
+$f_{Y_1, Y_2}(y_1, y_2) = 2\left[\frac{1}{2\pi\sigma^2}e^{-\frac{y_1}{2\sigma^2}}\frac{1}{2\sqrt{1 - y_2^2}}\right]0 < y_1 < \infty, -1 < y_2 < 1.$
+\newline
+(b) Y\textsubscript{1} is square distance and Y\textsubscript{2} is the cosine orientation. It says that distance is independent of orientation. ( The above can be factorize in y{\textsubscript{1}} and y{\textsubscript{2}})
+\newline
+
+\section{}
+$f_X(x) = \frac{1}{2}e^{-\frac{x}{2}}$ 0 < x < $\infty$
+\newline
+$f_Y(y) = \frac{1}{2\pi}$, 0 < y < 2$\pi$
+\newline
+$f_{X, Y}(x, y) = \frac{1}{4 \pi}e^{-\frac{x}{2}}$
+\newline
+t = X{\textsuperscript{2}} + Y{\textsuperscript{2}}
+\newline
+$\theta = tan^{-1}(\frac{y}{x})$
+\newline
+J = $\left|\stackanchor{2x \quad 2y}{\frac{-y}{x^2 + y^2} \quad \frac{-x}{x^2 + y^2}}\right|$ = 2
+\newline
+$f_{T, \textbf{$\theta$}}(t, \theta) = \frac{2}{4 \pi}e^{-\frac{x^2 + y^2}{2}}$, 0 < x{\textsuperscript{2}} + y{\textsuperscript{2}} < $\infty$, 0 < tan{\textsuperscript{-1}}($\frac{y}{x}$) < 2$\pi$
+\newline
+($\therefore -\infty < x, y < \infty$)
+\newline
+
+\section{}
+U = aX + b, V = cY + d
+\newline
+J = $\left|\stackanchor{\frac{1}{a} \quad 0}{0 \quad \frac{1}{c}}\right|$ = $\frac{1}{ac}$
+\newline
+$f_{U, V}(u, v) = f_{X, Y}(h_1(u, v), h_2(u, v))|J|$
+\newline
+$f_{U, V}(u, v) = \frac{1}{ac}f\left(\frac{u-b}{a}, \frac{v - d}{c}\right)$
+\newline
+
+\section{}
+(a) U = XY, V = Y
+\newline
+J = $\frac{1}{v}$
+\newline
+$f_{U, V}(u, v) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \frac{\Gamma(\alpha + \beta + \gamma)}{\Gamma(\alpha + \beta)\Gamma(\gamma)} \left(\frac{u}{v}\right)^{\alpha - 1}\left(1 - \frac{u}{v}\right)^{\beta - 1}v^{\alpha + \beta - 1}(1 - v)^{\gamma - 1} \frac{1}{v}, 0 < u < v < 1.$
+\newline
+$f_U(u) = \frac{\Gamma(\alpha + \beta + \gamma)}{\Gamma(\alpha)\Gamma(\beta)\Gamma(\gamma)}u^{\alpha - 1}\int_{u}^{1}v^{\beta - 1}(1 - v)^{\gamma - 1}(\frac{v - u}{v})^{\beta - 1}dv$
+\newline
+$f_U(u) = \frac{\Gamma(\alpha + \beta + \gamma)}{\Gamma(\alpha)\Gamma(\beta + \gamma)}u^{\alpha - 1}(1 - u)^{\beta + \gamma - 1}, 0 < u < 1$
+\newline
+(b) same as a
+\newline
+\section{}
+$f_{X, Y}(x, y) = \frac{1}{\Gamma(r)\Gamma(s)}x^{r-1}e^{-x}y^{s-1}e^{-y}$
+\newline
+$f_{U, V}(u, v) = f_{X, Y}(x, y)(h_1(u, v), h_2(u, v))|J|$
+\newline
+$|J| = z_1$
+\newline
+$f_{U, V}(u, v) = \frac{1}{\Gamma(r)\Gamma(s)}(z_1z_2)^{r-1}e^{-z_1z_2}(z_1 - z_1z_2)^{s-1}e^{-z_1 + z_1z_2}z_1$
+\newline
+$f_{U, V}(u) = \frac{1}{\Gamma(r)\Gamma(s)}\int_{0}^{1}(z_1z_2)^{r-1}e^{-z_1z_2}(z_1 - z_1z_2)^{s-1}e^{-z_1 + z_1z_2}z_1dz_2$
+\newline
+$f_{U}(u) = \frac{1}{\Gamma(r)\Gamma(s)}(z_1)^{r-1 + s-1}e^{-z_1}\int_{0}^{1}z_2^{r-1}(1 - z_2)^{s-1}dz_2$
+\newline
+$f_{U}(u) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}z_1^{r + s - 1}e^{-z_1}$
+\newline
+(b) similarly it can also be derive
+\newline
+\section{}
+(a) $f_{X, Y}(x, y) = 10$
+\newline
+J = 1
+\newline
+$f_{U, V}(u, v) = 10|J| = 10$
+\newline
+(b) doubtful, its not one to one mapping
+\newline
+\section{}
+(a) P(X $\ge$ z, Y $\ge$ X)
+\newline
+P(X $\ge$ z, Y $\ge$ X) = $\int_{0}^{z}\int_{x}^{\infty}\frac{1}{\lambda\mu}e^{-\left[\frac{x}{\lambda} + \frac{y}{\mu}\right]}dydx$
+\newline
+P(Y $\ge$ z, X $\ge$ Y) = $\int_{0}^{z}\int_{y}^{\infty}\frac{1}{\lambda\mu}e^{-\left[\frac{x}{\lambda} + \frac{y}{\mu}\right]}dxdy$
+\newline
+(b) both are same
+\section{}
+(a) U $\sim$ n($\mu$ + $\sigma$, 2$\sigma^2$)
+\newline
+U $\sim$ n($\mu$ - $\sigma$, 2$\sigma^2$)
+\newline
+J = $\frac{1}{2}$
+\newline
+distribution can be broken down buy factorization.
+\newline
+\section{}
+(a) U = $\frac{X}{X + Y}$
+\newline
+V = X
+\newline
+X = V, Y = $\frac{V}{U}(1-U)$
+\newline
+|J| = $\frac{v}{u^2}$
+\newline
+$f_U(v) = \frac{1}{\pi}\int_{0}^{\infty}e^{-\frac{1}{2}\left[v^2 + v^2\frac{[1 - u]^2}{u^2}\right]}dv$
+\newline
+$f_U(v) = \frac{1}{\pi} \frac{1}{u^2 + (1 - u)^2}$
+\newline
+(b) $f_U(u) = \frac{1}{\pi} \frac{1}{1 + u^2}$
+\newline
+(c) If two distribution have std normal distribution, then X/|Y| has Cauchy distribution
+\newline
+\section{}
+(a) let X/Y = cot(z)
+\newline
+$f_(R, \theta)(r, \theta) = \frac{1}{2\pi}$
+\newline
+also
+\newline
+$f_(\theta)(\theta) = \frac{1}{2\pi}$
+\newline
+$f_Z(z) = \frac{1}{2\pi}\left|\frac{1}{1 + z^2}\right| (0 < \theta < \pi) + \frac{1}{2\pi}\left|\frac{1}{1 + z^2}\right| (\pi < \theta < 2\pi)$
+\newline
+$f_Z(z) = \frac{1}{\pi}\frac{1}{1 + z^2}$
+\newline
+(b)	$\frac{2XY}{\sqrt{X^2 + Y^2}} = Rsin(2\theta)$
+\newline
+$rest is doubtful$
+\section{}
+(a) EY = E(E(Y|X))
+\newline
+E(Y|X) = x
+EY = EX = $\frac{1}{2}$
+\newline
+VarY = E(Var(Y|X)) + Var(E(Y|X))
+\newline
+VarY = EX{\textsuperscript{2}} + VarX
+\newline
+VarY = $\frac{1}{3}$ + $\frac{1}{3} - \frac{1}{4}$ = $\frac{5}{12}$
+\newline
+Cov(X, Y) = EXY - $\mu_{\alpha}\mu_{\beta}$
+\newline
+EXY = E(E(XY|X)) = E(XE(Y|X)) = E(X\textsuperscript{2}) = $\frac{1}{3}$
+EXY = $\frac{1}{3}$ - EXEY = $\frac{1}{3} - (\frac{1}{2}\frac{1}{2})$ = $\frac{1}{12}$
+\newline
+(b) X is uniform distribution hace independent
+\newline
+\section{}
+(a) EY = $\frac{n}{2}$
+\newline
+VarY = $\frac{n^2}{16} + \frac{n}{6}$
+\newline
+(b) P(Y = y, X $\le$ x) = $\left(\stackanchor{n}{y}\right)x^y(1-x)^{n-y}$
+\newline
+(c) = P(Y = y) = $\left(\stackanchor{n}{y}\right)\int_{0}^{\infty}x^y(1-x)^{n-y}$
+\newline
+P(y=y) = $\left(\stackanchor{n}{y}\right)\frac{\Gamma(y+1)\Gamma(n - y + 1)}{\Gamma(n + 2)}$
+\newline
+\section{}
+(a) $f_{Y}(y) = \int_{0}^{\infty}\frac{e^{-\Lambda}\Lambda^y}{y!}\frac{1}{\Gamma(\alpha)\beta^{\alpha}}{\Lambda}^{\alpha - 1}e^{-\frac{\Lambda}{\beta}}d\Lambda$
+\newline
+$f_{Y}(y) = \frac{1}{y!\Gamma(\alpha)\beta^{\alpha}}\int_{0}^{\infty}e^{-\Lambda -\frac{\Lambda}{\beta}}{\Lambda}^{y + \alpha - 1}d\Lambda$
+\newline
+$f_{Y}(y) = \frac{1}{y!\Gamma(\alpha)\beta^{\alpha}}\Gamma(\alpha + y)(\frac{\beta}{1 + \beta})^{\alpha + y}$
+\newline
+$f_{Y}(y) = \frac{\Gamma(\alpha + y)}{y!\Gamma(\alpha)}(\frac{1}{1 + \beta})^\alpha(\frac{\beta}{1 + \beta})^\alpha$
+\newline
+$f_{Y}(y) = \left(\stackanchor{y + \alpha - 1}{y}\right)(\frac{1}{1 + \beta})^\alpha(\frac{\beta}{1 + \beta})^\alpha$
+\newline
+EY = $\alpha\beta$
+\newline
+VarY = $\alpha\beta + \alpha\beta^2$
+\newline
+\section{}
+$Y|N \sim binomial(N, p)$
+\newline
+$N|A \sim Poisson(\Lambda)$
+\newline
+$Y|\Lambda = \sum\limits_{n=y}^{\infty}\left(\stackanchor{n}{y}\right)p^y(1-p)^{n-y}e^{-\Lambda}\frac{\Lambda^n}{n!}$
+\newline
+$\frac{(p\Lambda)^ye^{-p\Lambda}}{y!}$
+\newline
+Combine with other result to form your final answer
+\section{}
+(a) $Ee^{tx} = EE(e^{Ht} \vert N ) = EE(E^{(X_1 + X_2 + X_3 ...)t} \vert N) = E\left(\frac{log{1 - e^t(1-p)}}{log p}\right)^{N}$
+\newline
+$E\left(\frac{log{1 - e^t(1-p)}}{log p}\right)^{N} = \sum\limits_{n=0}^{\infty}\left(\frac{log\{{1 - e^t(1-p)\}}}{logp}\right)^n\frac{e^{-\lambda \lambda^n}}{n!}$
+\newline
+$E(e^{tx}) = \left(\frac{p}{1 - e^t(1 - p)}\right)^{\frac{-\lambda}{logp}}$
+\newline
+moment of negative binomial distribution
+\newline
+\section{}
+(a) P(X = x | P = p) = $\left(\stackanchor{n}{x}\right)p^x(1 - p)^{n-x}$
+\newline
+P(X = x) = $\int_{0}^{1}$$\left(\stackanchor{n}{x}\right)p^x(1-p)^(n-x)p^{\alpha - 1}(1 - p)^{\beta - 1}$
+\newline
+Later can be derive
+\newline
+(b) $\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\left(\stackanchor{r + x - 1}{x}\right)\frac{\Gamma(\alpha + r)\Gamma(x + \beta)}{\Gamma(\alpha + r + x + \beta)}$
+\newline
+\section{}
+(a) $VarX = E(Var(X|Y)) + Var(E(X|Y))$
+\newline
+$E[np(1 - p)] + Var(np)$
+\newline
+$nEP - nEP^2 + n^2[EP^2 - (EP)^2]$
+\newline
+$n^2EP^2 - n^2(EP)^2 + nEP - nEP^2$
+\newline
+$n(n-1)EP^2 - n^2(EP)^2 + nEP - n(n-1)(EP)^2 + n(n-1)(EP)^2$
+\newline
+$n(n-1)VarP - n^2(EP)^2 + nEP + n^2(EP)^2 - n(EP)^2$
+\newline
+$n(n-1)VarP + nEP - n(EP)^2$
+\newline
+$n(n-1)VarP + nEP(1 - EP)$
+\newline
+(b) simple formulae
+\section{}
+(a) EY = $\sum\limits_{i=1}^{n}EX_i = \sum\limits_{i=1}^{n}EEX_i|P_i = \frac{n\alpha}{\alpha + \beta}$
+\newline
+(b) if all $X_i$ are independent
+\newline
+Var(Y) = $\sum\limits_{i=1}^{n}Var(X_i)$
+\newline
+\quad  = $nVar(X_i)$
+\newline
+\quad = $n\frac{\alpha\beta}{\{\alpha + \beta\}^2}$
+\newline
+(c) EY = $\frac{\alpha}{\alpha + \beta}\sum\limits_{i=1}^{k}n_i$
+\newline
+Var(Y) = $E(\sum\limits_{i=1}^{k}X_i)^2 - (E(\sum\limits_{i=1}^kX_i))^2$
+\quad = $EX_1^2 + EX_2^2 + EX_3^2 ... 2EX_1X_2 + 2EX_1X_3 ... - (EX_1)^2 - (EX_2)^2 - (EX_3)^2 - 2EX_1EX_2 - 2EX_1EX_3 ... $
+($\because$ sample are i.i.d $2EX_iEX_j = 2EX_iX_j$)
+\newline
+(c) same approach solve
+\section{}
+(a, b) same method as above
+\newline
+\section{}
+(a) $f(x) = \int_{0}^{\lambda}\frac{1}{v}e^{-\frac{x}{v}}p_{\lambda}(v)dv = \frac{x^{r - 1}e^{-\frac{x}{\lambda}}}{\Gamma(r)\lambda^r}$
+\newline
+(b) simple integration
+\newline
+(c) $\frac{d log(f(x))}{dx} = \frac{r - 1}{x} - \frac{1}{\lambda}$
+\newline
+${\frac{d}{dx} log\int_{0}^{\infty}}(e^{-\frac{x}{v}}/v)q_{\lambda}(v){dx} < 0$ contradiction
+\newline
+\section{}
+(a) $f(x_1, x_2, ... , x_n) = \frac{m!}{x_1!x_2!...x_n!}p_1^{x_1}p_2^{x_2} ... p_n^{x_n}$
+\newline
+$f(x_j) = \frac{m!}{x_j!(m - x_j)!}p_j^{x_j}(1 - p_j)^{m - x_j}\sum_{x_i \ne x_j} \frac{(m - x_j)!}{x_1x_2 ... x_{j-1}x_{j+1} ... x_m}\frac{p_1}{1 - p_j}^{x_1} ... \frac{p_n}{1 - p_j}^{x_n}$ the side term is another multinomial
+\newline
+$f(x_j) = \frac{m!}{x_j!(m - x_j)!}p_j^{x_j}(1 - p_j)^{m - x_j}$
+\newline
+(b) Expand on the same idea to get
+\newline
+$f(x_i, x_j) = \frac{m!}{x_j!(m - x_j)!}p_j^{x_j}(1 - p_j)^{m - x_j} \frac{m - x_j!}{x_i!(m - x_i - x_j)!}\left[\frac{p_i}{1 - p_j}\right]^{x_i}\left[1 - \frac{p_i}{1 - p_j}\right]^{(m - x_i - x_j)}$
+\newline
+proceed further
+\newline
+\section{}
+(a), (b) Take either (1-y) or (1 - x) take that out and integrate
+\newline
+(c), (d) solve for the values
+\newline
+\section{}
+Cov(X, a) = E(Xa) - E(a)EX
+\newline
+Cov(X, a) = aEX - aEX = 0
+\newline
+Corr = 0, not correlated
+\newline
+\section{}
+(a) $Corr(X, Y) = \frac{Cov(X, Y)}{\sigma_x\sigma_y}$
+\newline
+$Corr(X, Y) = \frac{\mu_X\sigma_Y}{\sqrt{(\mu_X^{2}\sigma_Y^{2} + \mu_Y^{2}\sigma_X^{2} + \sigma_X^{2}\sigma_Y^{2})}}$
+\newline
+\section{}
+(a) $\sigma^2$
+\newline
+(b) $0$
+\newline
+\section{}
+(a) simple algebric identity
+\newline
+\section{}
+(a) Integrate by keeping other fix
+\newline
+(b) divide the bivariate by f(x)
+\newline
+(c) take U = X+Y, V = Y
+\newline
+\section{}
+(a) $EX = c_x, EY = c_y, VarX = EX^2 - (EX)^2 = E(a_xZ_1 + b_xZ_2 + c_x)^2 - (E(a_xZ_1 + b_xZ_2 + c_x))^2 = a_x^2 + b_x^2, similarly for both of 2$
+\newline
+(b) substitute
+\newline
+(c) use jacobian transformation
+\newline
+(d) there are infinite number of solutions
+\newline
+\section{}
+(a) P(Z $\le$ z) = P(Z $\le$ z and XY > 0) + P(-Z $\le$ z and XY < 0)
+\newline
+P(Z $\le$ z and Y < 0) + P(-Z $\le$ z and Y < 0)
+\newline
+P(Z $\le$ z)P(Y < 0) + P(Z $\ge$ -z)P(Y < 0)
+\newline
+P(Z $\le$ z)(P(Y < 0) + P(Y > 0))
+\newline
+P(Z $\le$ z)
+\newline
+(b) \newline
+Z > 0, X > 0, Y > 0
+\newline
+Z > 0, X < 0, Y > 0
+\newline
+Z < 0, X < 0, Y < 0
+\newline
+Z < 0, X > 0, Y < 0
+\newline
+Z and Y have same sign
+\newline
+\section{}
+(a), (b) solve
+\section{}
+(a) $f_X(x) =  \int_{-\infty}^{\infty}(af_1(x)g_1(y) + (1-a)f_2(x)g_2(y)) = af_1(x) + (1 - a)f_2(x)$, similarly other
+\newline
+(b) f(x, y) = $f_X(x)f_Y(y)$, solve it and get the conditions
+\newline
+(c) Cov(X, Y) = EXY - EXEY = $a(1-a)[\mu_1 - \mu_2][\epsilon_1 - \epsilon_2] = 0$ for uncorrelated variable
+\newline
+(d) Take any random binomial
+say
+$f_1 \sim binomial(n, p_1), f_1 \sim binomial(n, p_2), g_1 \sim binomial(n, p_1), g_2 \sim binomial(n, p_2)$
+\newline
+\section{}
+solve, simple
+\newline
+\section{}
+(a) $f(X/Y \le t)$
+\newline
+$U = X/Y, V = Y$
+\newline
+$Y = V, X = UV, |J| = v$
+\newline
+$f_{U, V}(u, v) = 1 \times v$
+\newline
+$f_{U}(u) = \int_{0}^{1}vdv = \frac{1}{2}$
+\newline
+$P(u \le t) = \begin{cases}
+	0 & t \le 0 \\
+	\frac{t}{2} & 0 \le t \le 2  \\
+	1 & 2 \le t \\
+\end{cases}$
+(b) $f(XY \le t)$
+\newline
+$Y = V, X = \frac{u}{v}, |J| = \frac{1}{v}$
+\newline
+$f_{U, V}(u, v) = \frac{1}{v}$
+\newline
+$f_{U}(u) = \infty$
+\newline
+(c) same for z
+\newline
+\section{}
+(a) $f_{X, Y}(x, y) = \frac{1}{2\pi}e^{-\frac{1}{2}\left[x^2 + y^2\right]}$
+\newline
+Transformation
+$Z^2 = X^2 + Y^2, W = Y$
+Take jacobain and solve
+\newline
+$f_{Z}(z) = \frac{z}{2}e^{-\frac{z^2}{2}}$
+\newline
+\section{}
+(DOUBTFUL)
+\newline
+\section{}
+Example 4.6.8 will be used for getting gamma distribution
+\newline
+$f_y(y) = \frac{(-logy)^{n-1}}{\Gamma(n)}$
+\newline
+\section{}
+P(x, y, z) = P(x)P(y)P(z)
+\newline
+P(X $\ge$ z) = $\frac{1}{\lambda}e^{-\frac{x}{\lambda}}$
+\newline
+$P(x, y, z) = 3 (1 - e^{-\frac{y}{\lambda}})^2e^{-\frac{y}{\lambda}}$
+\newline
+\section{}
+
+
+
+
+
+\end{document}
